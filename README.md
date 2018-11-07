@@ -33,8 +33,8 @@ Run the following commands to prepare the Cordova application:
 
 ```bash
     npm run prepare
-    npm run platform add ios
-    npm run platform add android
+    npm run platform-ios
+    npm run platform-android
 ``` 
 
 
