@@ -7,13 +7,14 @@
     <allow-intent href="*" />
     <access origin="*" />
     <allow-navigation href="*" />
-    <plugin name="cordova-plugin-camera" spec="^3.0.0">
+    <engine name="android" spec="^6.4.0" />
+    <engine name="ios" spec="^4.5.5" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.2">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Camera" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Need to &#xA; access photolibrary" />
     </plugin>
     <plugin name="cordova-plugin-media-capture" spec="^2.0.0" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-file" spec="^5.0.0" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <engine name="android" spec="^6.4.0" />
-    <engine name="ios" spec="^4.5.4" />
 </widget>

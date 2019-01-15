@@ -1,49 +1,50 @@
 {
-    "name": "cordova-ziggeo-demo",
-    "version": "0.0.1",
-    "description": "Ziggeo Cordova Demo",
-    "homepage": "https://ziggeo.com",
-    "contributors": [
-        "Ziggeo"
+  "name": "cordova-ziggeo-demo",
+  "version": "0.0.2",
+  "description": "Ziggeo Cordova Demo",
+  "homepage": "https://ziggeo.com",
+  "contributors": [
+    "Ziggeo"
+  ],
+  "license": "Open Source",
+  "dependencies": {
+    "cordova-android": "^6.4.0",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-android-permissions": "^1.0.0",
+    "cordova-plugin-camera": "^4.0.2",
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-media-capture": "^2.0.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cross-os": "^1.3.0",
+    "ziggeo-client-sdk": ""
+  },
+  "scripts": {
+    "prepare": "cross-os preparing",
+    "preparing": {
+      "win32": "mkdir www\\assets && copy node_modules\\ziggeo-client-sdk\\build\\* www\\assets && copy ziggeo-credentials.js www\\assets",
+      "darwin": "mkdir -p www/assets && cp node_modules/ziggeo-client-sdk/build/* www/assets && cp ziggeo-credentials.js www/assets",
+      "linux": "mkdir -p www/assets && cp node_modules/ziggeo-client-sdk/build/* www/assets && cp ziggeo-credentials.js www/assets"
+    },
+    "platform-ios": "cordova platform add ios",
+    "platform-android": "cordova platform add android",
+    "build": "cordova build",
+    "run-ios": "cordova run ios --device",
+    "run-android": "cordova run android --device"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
     ],
-    "license": "Open Source",
-    "dependencies": {
-        "cordova-android": "^6.4.0",
-        "cordova-ios": "^4.5.4",
-        "cordova-plugin-android-permissions": "^1.0.0",
-        "cordova-plugin-camera": "^3.0.0",
-        "cordova-plugin-file": "^5.0.0",
-        "cordova-plugin-media-capture": "^2.0.0",
-        "cordova-plugin-whitelist": "^1.3.3",
-        "cross-os": "^1.3.0",
-        "ziggeo-client-sdk": ""
-    },
-    "scripts": {
-        "prepare": "cross-os preparing",
-        "preparing": {
-            "win32": "mkdir www\\assets && copy node_modules\\ziggeo-client-sdk\\build\\* www\\assets && copy ziggeo-credentials.js www\\assets",
-            "darwin": "mkdir -p www/assets && cp node_modules/ziggeo-client-sdk/build/* www/assets && cp ziggeo-credentials.js www/assets",
-            "linux": "mkdir -p www/assets && cp node_modules/ziggeo-client-sdk/build/* www/assets && cp ziggeo-credentials.js www/assets"
-        },
-        "platform-ios": "cordova platform add ios",
-        "platform-android": "cordova platform add android",
-        "build": "cordova build",
-        "run-ios": "cordova run ios --device",
-        "run-android": "cordova run android --device"
-    },
-    "cordova": {
-        "platforms": [
-            "android",
-            "ios"
-        ],
-        "plugins": {
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-camera": {
-                "CAMERA_USAGE_DESCRIPTION": "Camera"
-            },
-            "cordova-plugin-media-capture": {},
-            "cordova-plugin-android-permissions": {},
-            "cordova-plugin-file": {}
-        }
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "Camera",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "Need to \n access photolibrary"
+      },
+      "cordova-plugin-media-capture": {},
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-file": {}
     }
+  }
 }

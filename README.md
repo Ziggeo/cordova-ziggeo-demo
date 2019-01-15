@@ -47,6 +47,11 @@ Run the following command to build the Cordova application:
 ``` 
 
 
+## iOS
+
+Make sure to add NS_CAMERA_USAGE_DESCRIPTION and NS_MICROPHONE_USAGE_DESCRIPTION to your Info.plist.
+
+
 ## Run
 
 Run the following commands to run the Cordova application on iOS / Android:
